@@ -8,8 +8,9 @@ print('Ready? Guess the number!')
 
 my_number = random.randint(1, 100)
 guess_count = 0
+answer = input()
 
-while answer == 'Y':
+while answer != 'N':
     while 0 <= guess_count <= 10:
         user_guess = int(input())
         if user_guess > my_number:
@@ -23,8 +24,17 @@ while answer == 'Y':
         elif user_guess == my_number:
             print(f"You got it in {guess_count} guesses! My number was {my_number}!")
             print("Would you like to play again? Please enter Y or N!")
+            answer = input().upper()
+            if answer == 'Y':
+                guess_count = 0
+            else:
+                print("Goodbye!")
         elif guess_count == 10:
             print("You've run out of guesses and you didn't guess my number! Try again?!")
             print("Please enter Y or N!")
             answer = input().upper()
+            if answer == 'Y':
+                guess_count = 0
+            else:
+                print("Goodbye!")
 
