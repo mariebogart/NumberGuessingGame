@@ -21,6 +21,7 @@ while answer == 'Y':
             guess_count += 1
         elif user_guess == my_number:
             print(f"You got it! My number was {my_number}!")
+            print("Would you like to play again? Please enter Y or N!")
         elif guess_count == 10:
             print("You've run out of guesses and you didn't guess my number! Try again?!")
             print("Please enter Y or N!")
